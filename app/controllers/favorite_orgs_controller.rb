@@ -1,0 +1,2 @@
+class FavoriteOrgsController < ApplicationController
+end
