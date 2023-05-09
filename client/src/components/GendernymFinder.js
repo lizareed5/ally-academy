@@ -6,7 +6,7 @@ export default function GendernymFinder() {
     return (
         <div>
             <Nav />
-            GendernymFinder
+            Gendernym Finder
         </div>
     )
 }

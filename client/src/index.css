@@ -65,12 +65,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .menu-item:hover {
-  color: teal;
+  color: #33A8C7;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+  color: white;
   padding: 0.8em;
   text-align: left;
 }
@@ -82,5 +82,5 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent !important;
 }

@@ -6,7 +6,7 @@ export default function UserProfile() {
     return (
         <div>
             <Nav />
-            UserProfile
+            User Profile
         </div>
     )
 }

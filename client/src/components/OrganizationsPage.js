@@ -6,7 +6,7 @@ export default function OrganizationsPage() {
     return (
         <div>
             <Nav />
-            OrganizationsPage
+            Organizations
         </div>
     )
 }
