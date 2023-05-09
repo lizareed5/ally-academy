@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div>
             <Nav />
-            Welcome to Ally Academy!
+            <h1>Welcome to Ally Academy!</h1>
         </div>
     )
 }
