@@ -120,6 +120,7 @@ Organization.create(
 puts 'done seeding organizations 🏳️‍🌈'
 
 puts 'seeding words 💬'
+# look into ma'am, sir, misses, mister, miss in speaking
 woman = Word.create(word: 'woman')
 man = Word.create(word: 'man')
 girlfriend = Word.create(word: 'girlfriend')
@@ -140,6 +141,8 @@ grandmother = Word.create(word: 'grandmother')
 grandfather = Word.create(word: 'grandfather')
 granddaughter = Word.create(word: 'granddaughter')
 grandson = Word.create(word: 'grandson')
+godmother = Word.create(word: 'godmother')
+godfather = Word.create(word: 'godfather')
 goddaughter = Word.create(word: 'goddaughter')
 godson = Word.create(word: 'godson')
 ms = Word.create(word: 'Ms.')
@@ -200,6 +203,7 @@ so = Gendernym.create(gendernym: 's/o', description: '')
 significant_other = Gendernym.create(gendernym: 'significant other', description: '')
 partner = Gendernym.create(gendernym: 'partner', description: '')
 spouse = Gendernym.create(gendernym: 'spouse', description: '')
+companion = Gendernym.create(gendernym: 'companion', description: '')
 sibling = Gendernym.create(gendernym: 'sibling', description: '')
 sib = Gendernym.create(gendernym: 'sib', description: '')
 sibster = Gendernym.create(gendernym: 'sibster', description: '')
@@ -228,6 +232,7 @@ nibling = Gendernym.create(gendernym: 'nibling', description: '')
 chibling = Gendernym.create(gendernym: 'chibling', description: '')
 sibkid = Gendernym.create(gendernym: 'sibkid', description: '')
 nieph = Gendernym.create(gendernym: 'nieph', description: '')
+nephewiece = Gendernym.create(gendernym: 'nephewiece', description: '')
 nephiece = Gendernym.create(gendernym: 'nephiece', description: '')
 niecew = Gendernym.create(gendernym: 'niecew', description: '')
 child = Gendernym.create(gendernym: 'child', description: '')
@@ -242,9 +247,11 @@ nini = Gendernym.create(gendernym: 'nini', description: '')
 bibi = Gendernym.create(gendernym: 'bibi', description: '')
 grandchild = Gendernym.create(gendernym: 'grandchild', description: '')
 grandkid = Gendernym.create(gendernym: 'grandkid', description: '')
+godparent = Gendernym.create(gendernym: 'godparent', description: '')
 godchild = Gendernym.create(gendernym: 'godchild', description: '')
 godkid = Gendernym.create(gendernym: 'godkid', description: '')
-mx = Gendernym.create(gendernym: 'Mx.', description: '')
+m = Gendernym.create(gendernym: 'M.', description: '')
+mx = Gendernym.create(gendernym: 'Mx.', description: 'pronounced miks.mix')
 mq = Gendernym.create(gendernym: 'Mq.', description: '')
 msr = Gendernym.create(gendernym: 'Msr.', description: '')
 ind = Gendernym.create(gendernym: 'Ind.', description: '')
@@ -258,6 +265,7 @@ person_in_business = Gendernym.create(gendernym: 'person in business', descripti
 legislator = Gendernym.create(gendernym: 'legislator', description: '')
 councilperson = Gendernym.create(gendernym: 'councilperson', description: '')
 chair = Gendernym.create(gendernym: 'chair', description: '')
+chairperson = Gendernym.create(gendernym: 'chairperson', description: '')
 mail_carrier = Gendernym.create(gendernym: 'mail carrier', description: '')
 letter_carrier = Gendernym.create(gendernym: 'letter carrier', description: '')
 postal_worker = Gendernym.create(gendernym: 'postal worker', description: '')
@@ -283,260 +291,207 @@ upper_level_student = Gendernym.create(gendernym: 'upper-level student', descrip
 word = Gendernym.create(gendernym: 'word', description: '')
 puts 'done seeding gendernyms 🧍'
 
-Alternative.create(
-    gendernym_id: person.id,
-    word_id: woman.id
-)
-Alternative.create(
-    gendernym_id: person.id,
-    word_id: man.id
-)
-Alternative.create(
-    gendernym_id: adult.id,
-    word_id: woman.id
-)
-Alternative.create(
-    gendernym_id: adult.id,
-    word_id: man.id
-)
-
-# puts 'seeding words 💬'
-# Word.create(
-#     word: 'woman',
-#     gendernyms: ['person', 'adult']
-# )
-# Word.create(
-#     word: 'man',
-#     gendernyms: ['person', 'adult']
-# )
-# Word.create(
-#     word: 'girlfriend',
-#     gendernyms: ['s/o', 'significant other', 'partner']
-# )
-# Word.create(
-#     word: 'boyfriend',
-#     gendernyms: ['s/o', 'significant other', 'partner']
-# )
-# Word.create(
-#     word: 'wife',
-#     gendernyms: ['s/o', 'significant other', 'partner', 'spouse']
-# )
-# Word.create(
-#     word: 'husband',
-#     gendernyms: ['s/o', 'significant other', 'partner', 'spouse']
-# )
-# Word.create(
-#     word: 'sister',
-#     gendernyms: ['sibling', 'sib', 'sibster', 'sibter']
-# )
-# Word.create(
-#     word: 'brother',
-#     gendernyms: ['sibling', 'sib', 'sibster', 'sibter']
-# )
-# Word.create(
-#     word: 'mom',
-#     gendernyms: ['parent', 'nibi', 'dama', 'dommy', 'maddy', 'muddy', 'moddy', 'zaza', 'zither', 'baba', 'nini', 'bibi']
-# )
-# Word.create(
-#     word: 'dad',
-#     gendernyms: ['parent', 'nibi', 'dama', 'dommy', 'maddy', 'muddy', 'moddy', 'zaza', 'zither', 'baba', 'nini', 'bibi']
-# )
-# Word.create(
-#     word: 'aunt',
-#     gendernyms: ['pibling', 'auncle', 'titi', 'zizi', 'nini', 'bibi', 'untie/unty', 'call them by their name']
-# )
-# Word.create(
-#     word: 'uncle',
-#     gendernyms: ['pibling', 'auncle', 'titi', 'zizi', 'nini', 'bibi', 'untie/unty']
-# )
-# Word.create(
-#     word: 'niece',
-#     gendernyms: ['nibling', 'chibling', 'sibkid', 'nieph', 'nephiece', 'niecew']
-# )
-# Word.create(
-#     word: 'nephew',
-#     gendernyms: ['nibling', 'chibling', 'sibkid', 'nieph', 'nephiece', 'niecew']
-# )
-# Word.create(
-#     word: 'daughter',
-#     gendernyms: ['child', 'kid', 'offspring', 'sprog', 'oldest/youngest/middle']
-# )
-# Word.create(
-#     word: 'son',
-#     gendernyms: ['child', 'kid', 'offspring', 'sprog', 'oldest/youngest/middle']
-# )
-# Word.create(
-#     word: 'grandmother',
-#     gendernyms: ['grandparent', 'grandwa', 'grandy', 'nini', 'bibi']
-# )
-# Word.create(
-#     word: 'grandfather',
-#     gendernyms: ['grandparent', 'grandwa', 'grandy', 'nini', 'bibi']
-# )
-# Word.create(
-#     word: 'granddaughter',
-#     gendernyms: ['grandchild', 'grandkid']
-# )
-# Word.create(
-#     word: 'grandson',
-#     gendernyms: ['grandchild', 'grandkid']
-# )
-# Word.create(
-#     word: 'goddaughter',
-#     gendernyms: ['godchild', 'godkid']
-# )
-# Word.create(
-#     word: 'godson',
-#     gendernyms: ['godchild', 'godkid']
-# )
-# Word.create(
-#     word: 'Ms./Mrs./Miss',
-#     gendernyms: ['M.', 'Mx.', 'Mq.', 'Msr.', 'Ind.']
-# )
-# Word.create(
-#     word: 'actress',
-#     gendernyms: ['actor']
-# )
-# Word.create(
-#     word: 'actor',
-#     gendernyms: ['actor']
-# )
-# Word.create(
-#     word: 'waitress',
-#     gendernyms: ['server', 'waitron', 'waitstaff']
-# )
-# Word.create(
-#     word: 'waiter',
-#     gendernyms: ['server', 'waitron', 'waitstaff']
-# )
-# Word.create(
-#     word: 'steward',
-#     gendernyms: ['flight attendant']
-# )
-# Word.create(
-#     word: 'stewardess',
-#     gendernyms: ['flight attendant']
-# )
-# Word.create(
-#     word: 'businessman',
-#     gendernyms: ['business person', 'person in business']
-# )
-# Word.create(
-#     word: 'businesswoman',
-#     gendernyms: ['business person', 'person in business']
-# )
-# Word.create(
-#     word: 'congressman',
-#     gendernyms: ['legislator']
-# )
-# Word.create(
-#     word: 'congresswoman',
-#     gendernyms: ['legislator']
-# )
-# Word.create(
-#     word: 'councilman',
-#     gendernyms: ['councilperson']
-# )
-# Word.create(
-#     word: 'councilwoman',
-#     gendernyms: ['councilperson']
-# )
-# Word.create(
-#     word: 'chairman',
-#     gendernyms: ['chair', 'chairperson']
-# )
-# Word.create(
-#     word: 'chairwoman',
-#     gendernyms: ['chair', 'chairperson']
-# )
-# Word.create(
-#     word: 'mailman/postman',
-#     gendernyms: ['mail carrier', 'letter carrier', 'postal worker']
-# )
-# Word.create(
-#     word: 'mailwoman/postwoman',
-#     gendernyms: ['mail carrier', 'letter carrier', 'postal worker']
-# )
-# Word.create(
-#     word: 'policeman',
-#     gendernyms: ['police officer']
-# )
-# Word.create(
-#     word: 'policewoman',
-#     gendernyms: ['police officer']
-# )
-# Word.create(
-#     word: 'salesman',
-#     gendernyms: ['salesperson', 'sales associate', 'salesclerk', 'sales executive']
-# )
-# Word.create(
-#     word: 'saleswoman',
-#     gendernyms: ['salesperson', 'sales associate', 'salesclerk', 'sales executive']
-# )
-# Word.create(
-#     word: 'fireman',
-#     gendernyms: ['firefighter']
-# )
-# Word.create(
-#     word: 'firewoman',
-#     gendernyms: ['firefighter']
-# )
-# Word.create(
-#     word: 'barman',
-#     gendernyms: ['bartender']
-# )
-# Word.create(
-#     word: 'barwoman',
-#     gendernyms: ['bartender']
-# )
-# Word.create(
-#     word: 'landlord',
-#     gendernyms: ['owner']
-# )
-# Word.create(
-#     word: 'mankind',
-#     gendernyms: ['humankind']
-# )
-# Word.create(
-#     word: 'manpower',
-#     gendernyms: ['workforce']
-# )
-# Word.create(
-#     word: 'maiden name',
-#     gendernyms: ['family name']
-# )
-# Word.create(
-#     word: 'you guys',
-#     gendernyms: ['y`all']
-# )
-# Word.create(
-#     word: 'you girls',
-#     gendernyms: ['y`all']
-# )
-# Word.create(
-#     word: 'guys/men/gentlemen',
-#     gendernyms: ['folks', 'people']
-# )
-# Word.create(
-#     word: 'girls/women/ladies',
-#     gendernyms: ['folks', 'people']
-# )
-# Word.create(
-#     word: 'freshman',
-#     gendernyms: ['first-year student']
-# )
-# Word.create(
-#     word: 'manmade',
-#     gendernyms: ['machine-made', 'synthetic', 'artificial']
-# )
-# Word.create(
-#     word: 'upperclassman',
-#     gendernyms: ['upper-leve student']
-# )
-# Word.create(
-#     word: 'word',
-#     gendernyms: ['word']
-# )
-
-# # words to look up: mister, misses, ma'am, sir
-# puts 'done seeding words 💬'
+puts 'seeding alternatives: words + gendernyms'
+Alternative.create(gendernym_id: person.id, word_id: woman.id)
+Alternative.create(gendernym_id: adult.id, word_id: woman.id)
+Alternative.create(gendernym_id: person.id, word_id: man.id)
+Alternative.create(gendernym_id: adult.id, word_id: man.id)
+Alternative.create(gendernym_id: so.id, word_id: girlfriend.id)
+Alternative.create(gendernym_id: significant_other.id, word_id: girlfriend.id)
+Alternative.create(gendernym_id: partner.id, word_id: girlfriend.id)
+Alternative.create(gendernym_id: companion.id, word_id: girlfriend.id)
+Alternative.create(gendernym_id: so.id, word_id: boyfriend.id)
+Alternative.create(gendernym_id: significant_other.id, word_id: boyfriend.id)
+Alternative.create(gendernym_id: partner.id, word_id: boyfriend.id)
+Alternative.create(gendernym_id: companion.id, word_id: boyfriend.id)
+Alternative.create(gendernym_id: so.id, word_id: wife.id)
+Alternative.create(gendernym_id: significant_other.id, word_id: wife.id)
+Alternative.create(gendernym_id: partner.id, word_id: wife.id)
+Alternative.create(gendernym_id: companion.id, word_id: wife.id)
+Alternative.create(gendernym_id: spouse.id, word_id: wife.id)
+Alternative.create(gendernym_id: so.id, word_id: husband.id)
+Alternative.create(gendernym_id: significant_other.id, word_id: husband.id)
+Alternative.create(gendernym_id: partner.id, word_id: husband.id)
+Alternative.create(gendernym_id: companion.id, word_id: husband.id)
+Alternative.create(gendernym_id: spouse.id, word_id: husband.id)
+Alternative.create(gendernym_id: sibling.id, word_id: sister.id)
+Alternative.create(gendernym_id: sibling.id, word_id: brother.id)
+Alternative.create(gendernym_id: sib.id, word_id: sister.id)
+Alternative.create(gendernym_id: sib.id, word_id: brother.id)
+Alternative.create(gendernym_id: sibster.id, word_id: sister.id)
+Alternative.create(gendernym_id: sibster.id, word_id: brother.id)
+Alternative.create(gendernym_id: sibter.id, word_id: sister.id)
+Alternative.create(gendernym_id: sibter.id, word_id: brother.id)
+Alternative.create(gendernym_id: parent.id, word_id: mom.id)
+Alternative.create(gendernym_id: parent.id, word_id: dad.id)
+Alternative.create(gendernym_id: nibi.id, word_id: mom.id)
+Alternative.create(gendernym_id: nibi.id, word_id: dad.id)
+Alternative.create(gendernym_id: dama.id, word_id: mom.id)
+Alternative.create(gendernym_id: dama.id, word_id: dad.id)
+Alternative.create(gendernym_id: dommy.id, word_id: mom.id)
+Alternative.create(gendernym_id: dommy.id, word_id: dad.id)
+Alternative.create(gendernym_id: maddy.id, word_id: mom.id)
+Alternative.create(gendernym_id: maddy.id, word_id: dad.id)
+Alternative.create(gendernym_id: muddy.id, word_id: mom.id)
+Alternative.create(gendernym_id: muddy.id, word_id: dad.id)
+Alternative.create(gendernym_id: moddy.id, word_id: mom.id)
+Alternative.create(gendernym_id: moddy.id, word_id: dad.id)
+Alternative.create(gendernym_id: zaza.id, word_id: mom.id)
+Alternative.create(gendernym_id: zaza.id, word_id: dad.id)
+Alternative.create(gendernym_id: zither.id, word_id: mom.id)
+Alternative.create(gendernym_id: zither.id, word_id: dad.id)
+Alternative.create(gendernym_id: baba.id, word_id: mom.id)
+Alternative.create(gendernym_id: baba.id, word_id: dad.id)
+Alternative.create(gendernym_id: nini.id, word_id: mom.id)
+Alternative.create(gendernym_id: nini.id, word_id: dad.id)
+Alternative.create(gendernym_id: bibi.id, word_id: mom.id)
+Alternative.create(gendernym_id: bibi.id, word_id: dad.id)
+Alternative.create(gendernym_id: pibling.id, word_id: aunt.id)
+Alternative.create(gendernym_id: pibling.id, word_id: uncle.id)
+Alternative.create(gendernym_id: auncle.id, word_id: aunt.id)
+Alternative.create(gendernym_id: auncle.id, word_id: uncle.id)
+Alternative.create(gendernym_id: titi.id, word_id: aunt.id)
+Alternative.create(gendernym_id: titi.id, word_id: uncle.id)
+Alternative.create(gendernym_id: zizi.id, word_id: aunt.id)
+Alternative.create(gendernym_id: zizi.id, word_id: uncle.id)
+Alternative.create(gendernym_id: nini.id, word_id: aunt.id)
+Alternative.create(gendernym_id: nini.id, word_id: uncle.id)
+Alternative.create(gendernym_id: bibi.id, word_id: aunt.id)
+Alternative.create(gendernym_id: bibi.id, word_id: uncle.id)
+Alternative.create(gendernym_id: untie.id, word_id: aunt.id)
+Alternative.create(gendernym_id: untie.id, word_id: uncle.id)
+Alternative.create(gendernym_id: unty.id, word_id: aunt.id)
+Alternative.create(gendernym_id: unty.id, word_id: uncle.id)
+Alternative.create(gendernym_id: nibling.id, word_id: niece.id)
+Alternative.create(gendernym_id: nibling.id, word_id: nephew.id)
+Alternative.create(gendernym_id: chibling.id, word_id: niece.id)
+Alternative.create(gendernym_id: chibling.id, word_id: nephew.id)
+Alternative.create(gendernym_id: sibkid.id, word_id: niece.id)
+Alternative.create(gendernym_id: sibkid.id, word_id: nephew.id)
+Alternative.create(gendernym_id: nieph.id, word_id: niece.id)
+Alternative.create(gendernym_id: nieph.id, word_id: nephew.id)
+Alternative.create(gendernym_id: nephiece.id, word_id: niece.id)
+Alternative.create(gendernym_id: nephewiece.id, word_id: nephew.id)
+Alternative.create(gendernym_id: niecew.id, word_id: niece.id)
+Alternative.create(gendernym_id: niecew.id, word_id: nephew.id)
+Alternative.create(gendernym_id: child.id, word_id: daughter.id)
+Alternative.create(gendernym_id: child.id, word_id: son.id)
+Alternative.create(gendernym_id: kid.id, word_id: daughter.id)
+Alternative.create(gendernym_id: kid.id, word_id: son.id)
+Alternative.create(gendernym_id: offspring.id, word_id: daughter.id)
+Alternative.create(gendernym_id: offspring.id, word_id: son.id)
+Alternative.create(gendernym_id: sprog.id, word_id: daughter.id)
+Alternative.create(gendernym_id: sprog.id, word_id: son.id)
+Alternative.create(gendernym_id: oldest_youngest_middle.id, word_id: daughter.id)
+Alternative.create(gendernym_id: oldest_youngest_middle.id, word_id: son.id)
+Alternative.create(gendernym_id: grandparent.id, word_id: grandmother.id)
+Alternative.create(gendernym_id: grandparent.id, word_id: grandfather.id)
+Alternative.create(gendernym_id: grandwa.id, word_id: grandmother.id)
+Alternative.create(gendernym_id: grandwa.id, word_id: grandfather.id)
+Alternative.create(gendernym_id: grandy.id, word_id: grandmother.id)
+Alternative.create(gendernym_id: grandy.id, word_id: grandfather.id)
+Alternative.create(gendernym_id: nini.id, word_id: grandmother.id)
+Alternative.create(gendernym_id: nini.id, word_id: grandfather.id)
+Alternative.create(gendernym_id: bibi.id, word_id: grandmother.id)
+Alternative.create(gendernym_id: bibi.id, word_id: grandfather.id)
+Alternative.create(gendernym_id: grandchild.id, word_id: granddaughter.id)
+Alternative.create(gendernym_id: grandchild.id, word_id: grandson.id)
+Alternative.create(gendernym_id: grandkid.id, word_id: granddaughter.id)
+Alternative.create(gendernym_id: grandkid.id, word_id: grandson.id)
+Alternative.create(gendernym_id: godparent.id, word_id: godmother.id)
+Alternative.create(gendernym_id: godparent.id, word_id: godfather.id)
+Alternative.create(gendernym_id: godchild.id, word_id: goddaughter.id)
+Alternative.create(gendernym_id: godchild.id, word_id: godson.id)
+Alternative.create(gendernym_id: godkid.id, word_id: goddaughter.id)
+Alternative.create(gendernym_id: godkid.id, word_id: godson.id)
+Alternative.create(gendernym_id: m.id, word_id: ms.id)
+Alternative.create(gendernym_id: m.id, word_id: mrs.id)
+Alternative.create(gendernym_id: m.id, word_id: miss.id)
+Alternative.create(gendernym_id: m.id, word_id: mr.id)
+Alternative.create(gendernym_id: mx.id, word_id: ms.id)
+Alternative.create(gendernym_id: mx.id, word_id: mrs.id)
+Alternative.create(gendernym_id: mx.id, word_id: miss.id)
+Alternative.create(gendernym_id: mx.id, word_id: mr.id)
+Alternative.create(gendernym_id: mq.id, word_id: ms.id)
+Alternative.create(gendernym_id: mq.id, word_id: mrs.id)
+Alternative.create(gendernym_id: mq.id, word_id: miss.id)
+Alternative.create(gendernym_id: mq.id, word_id: mr.id)
+Alternative.create(gendernym_id: msr.id, word_id: ms.id)
+Alternative.create(gendernym_id: msr.id, word_id: mrs.id)
+Alternative.create(gendernym_id: msr.id, word_id: miss.id)
+Alternative.create(gendernym_id: msr.id, word_id: mr.id)
+Alternative.create(gendernym_id: ind.id, word_id: ms.id)
+Alternative.create(gendernym_id: ind.id, word_id: mrs.id)
+Alternative.create(gendernym_id: ind.id, word_id: miss.id)
+Alternative.create(gendernym_id: ind.id, word_id: mr.id)
+Alternative.create(gendernym_id: actor.id, word_id: actor.id)
+Alternative.create(gendernym_id: actor.id, word_id: actress.id)
+Alternative.create(gendernym_id: server.id, word_id: waitress.id)
+Alternative.create(gendernym_id: server.id, word_id: waiter.id)
+Alternative.create(gendernym_id: waitron.id, word_id: waitress.id)
+Alternative.create(gendernym_id: waitron.id, word_id: waiter.id)
+Alternative.create(gendernym_id: waitstaff.id, word_id: waitress.id)
+Alternative.create(gendernym_id: waitstaff.id, word_id: waiter.id)
+Alternative.create(gendernym_id: flight_attendant.id, word_id: steward.id)
+Alternative.create(gendernym_id: flight_attendant.id, word_id: stewardess.id)
+Alternative.create(gendernym_id: business_person.id, word_id: businessman.id)
+Alternative.create(gendernym_id: business_person.id, word_id: businesswoman.id)
+Alternative.create(gendernym_id: person_in_business.id, word_id: businessman.id)
+Alternative.create(gendernym_id: person_in_business.id, word_id: businesswoman.id)
+Alternative.create(gendernym_id: legislator.id, word_id: congressman.id)
+Alternative.create(gendernym_id: legislator.id, word_id: congresswoman.id)
+Alternative.create(gendernym_id: councilperson.id, word_id: councilman.id)
+Alternative.create(gendernym_id: councilperson.id, word_id: councilwoman.id)
+Alternative.create(gendernym_id: chair.id, word_id: chairman.id)
+Alternative.create(gendernym_id: chair.id, word_id: chairwoman.id)
+Alternative.create(gendernym_id: chairperson.id, word_id: chairman.id)
+Alternative.create(gendernym_id: chairperson.id, word_id: chairwoman.id)
+Alternative.create(gendernym_id: mail_carrier.id, word_id: mailman.id)
+Alternative.create(gendernym_id: mail_carrier.id, word_id: mailwoman.id)
+Alternative.create(gendernym_id: letter_carrier.id, word_id: mailman.id)
+Alternative.create(gendernym_id: letter_carrier.id, word_id: mailwoman.id)
+Alternative.create(gendernym_id: postal_worker.id, word_id: mailman.id)
+Alternative.create(gendernym_id: postal_worker.id, word_id: mailwoman.id)
+Alternative.create(gendernym_id: mail_carrier.id, word_id: postman.id)
+Alternative.create(gendernym_id: mail_carrier.id, word_id: postwoman.id)
+Alternative.create(gendernym_id: letter_carrier.id, word_id: postman.id)
+Alternative.create(gendernym_id: letter_carrier.id, word_id: postwoman.id)
+Alternative.create(gendernym_id: postal_worker.id, word_id: postman.id)
+Alternative.create(gendernym_id: postal_worker.id, word_id: postwoman.id)
+Alternative.create(gendernym_id: police_officer.id, word_id: policeman.id)
+Alternative.create(gendernym_id: police_officer.id, word_id: policewoman.id)
+Alternative.create(gendernym_id: sales_person.id, word_id: salesman.id)
+Alternative.create(gendernym_id: sales_person.id, word_id: saleswoman.id)
+Alternative.create(gendernym_id: sales_associate.id, word_id: salesman.id)
+Alternative.create(gendernym_id: sales_associate.id, word_id: saleswoman.id)
+Alternative.create(gendernym_id: salesclerk.id, word_id: salesman.id)
+Alternative.create(gendernym_id: salesclerk.id, word_id: saleswoman.id)
+Alternative.create(gendernym_id: sales_executive.id, word_id: salesman.id)
+Alternative.create(gendernym_id: sales_executive.id, word_id: saleswoman.id)
+Alternative.create(gendernym_id: firefighter.id, word_id: fireman.id)
+Alternative.create(gendernym_id: firefighter.id, word_id: firewoman.id)
+Alternative.create(gendernym_id: bartender.id, word_id: barman.id)
+Alternative.create(gendernym_id: bartender.id, word_id: barwoman.id)
+Alternative.create(gendernym_id: owner.id, word_id: landlord.id)
+Alternative.create(gendernym_id: humankind.id, word_id: mankind.id)
+Alternative.create(gendernym_id: workforce.id, word_id: manpower.id)
+Alternative.create(gendernym_id: family_name.id, word_id: maiden_name.id)
+Alternative.create(gendernym_id: yall.id, word_id: you_guys.id)
+Alternative.create(gendernym_id: yall.id, word_id: you_girls.id)
+Alternative.create(gendernym_id: folks.id, word_id: guys.id)
+Alternative.create(gendernym_id: people.id, word_id: guys.id)
+Alternative.create(gendernym_id: folks.id, word_id: men.id)
+Alternative.create(gendernym_id: people.id, word_id: men.id)
+Alternative.create(gendernym_id: folks.id, word_id: gentlemen.id)
+Alternative.create(gendernym_id: people.id, word_id: gentlemen.id)
+Alternative.create(gendernym_id: folks.id, word_id: girls.id)
+Alternative.create(gendernym_id: people.id, word_id: girls.id)
+Alternative.create(gendernym_id: folks.id, word_id: ladies.id)
+Alternative.create(gendernym_id: people.id, word_id: ladies.id)
+Alternative.create(gendernym_id: folks.id, word_id: women.id)
+Alternative.create(gendernym_id: people.id, word_id: women.id)
+Alternative.create(gendernym_id: first_year_student.id, word_id: freshman.id)
+Alternative.create(gendernym_id: upper_level_student.id, word_id: upperclassman.id)
+Alternative.create(gendernym_id: machine_made.id, word_id: manmade.id)
+Alternative.create(gendernym_id: synthetic.id, word_id: manmade.id)
+Alternative.create(gendernym_id: artificial.id, word_id: manmade.id)
