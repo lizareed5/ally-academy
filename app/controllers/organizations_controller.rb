@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-    # add rescuefrom
+    rescue_from ActiveRecord::RecordNotFound, with: :org_not_found
 
     def index
         render json: Organization.all, status: :ok
@@ -11,4 +11,7 @@ class OrganizationsController < ApplicationController
     end
 
     private
+    def org_not_found
+        render json: {error: "Organization not found."}, status: :not_found
+    end
 end
