@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&family=Shadows+Into+Light&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Shadows Into Light', cursive; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -87,4 +87,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: transparent !important;
+}
+
+/* gradient for button hover */
+.bg-gradient {
+  background-image: linear-gradient(to right, #FFEBEE, #FFE0B2, #FFF9C4, #E8F5E9, #E3F2FD, #E3F2FD, #F3E5F5);
 }
