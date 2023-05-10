@@ -34,7 +34,7 @@ export default function GendernymFinder() {
                     </div>
                     <input
                         onChange={handleSearchInput}
-                        type="text"
+                        type="search"
                         name="gendernym-search"
                         id="gendernym-search"
                         className="block w-1/3 rounded-md border-0 py-1.5 pl-7 pr-20 text-my_teal ring-1 ring-inset ring-my_purple placeholder:text-my_purple focus:ring-2 focus:ring-inset focus:ring-my_teal sm:text-sm sm:leading-6"
