@@ -190,8 +190,6 @@ ladies = Word.create(word: 'ladies')
 freshman = Word.create(word: 'freshman')
 manmade = Word.create(word: 'manmade')
 upperclassman = Word.create(word: 'upperclassman')
-word = Word.create(word: 'word')
-
 # words to look up: mister, misses, ma'am, sir
 puts 'done seeding words 💬'
 
@@ -255,7 +253,7 @@ mx = Gendernym.create(gendernym: 'Mx.', description: 'pronounced miks.mix')
 mq = Gendernym.create(gendernym: 'Mq.', description: '')
 msr = Gendernym.create(gendernym: 'Msr.', description: '')
 ind = Gendernym.create(gendernym: 'Ind.', description: '')
-actor = Gendernym.create(gendernym: 'actor', description: '')
+actor_nb = Gendernym.create(gendernym: 'actor', description: '')
 server = Gendernym.create(gendernym: 'server', description: '')
 waitron = Gendernym.create(gendernym: 'waitron', description: '')
 waitstaff = Gendernym.create(gendernym: 'waitstaff', description: '')
@@ -424,8 +422,8 @@ Alternative.create(gendernym_id: ind.id, word_id: ms.id)
 Alternative.create(gendernym_id: ind.id, word_id: mrs.id)
 Alternative.create(gendernym_id: ind.id, word_id: miss.id)
 Alternative.create(gendernym_id: ind.id, word_id: mr.id)
-Alternative.create(gendernym_id: actor.id, word_id: actor.id)
-Alternative.create(gendernym_id: actor.id, word_id: actress.id)
+Alternative.create(gendernym_id: actor_nb.id, word_id: actor.id)
+Alternative.create(gendernym_id: actor_nb.id, word_id: actress.id)
 Alternative.create(gendernym_id: server.id, word_id: waitress.id)
 Alternative.create(gendernym_id: server.id, word_id: waiter.id)
 Alternative.create(gendernym_id: waitron.id, word_id: waitress.id)
@@ -495,3 +493,6 @@ Alternative.create(gendernym_id: upper_level_student.id, word_id: upperclassman.
 Alternative.create(gendernym_id: machine_made.id, word_id: manmade.id)
 Alternative.create(gendernym_id: synthetic.id, word_id: manmade.id)
 Alternative.create(gendernym_id: artificial.id, word_id: manmade.id)
+puts 'seeding alternatives: words + gendernyms'
+
+puts 'done seeding data ✅'

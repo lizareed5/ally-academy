@@ -16,7 +16,7 @@ export default function OrganizationsPage() {
     return (
         <div>
             <Nav />
-            <h1 className="text-my_blue text-4xl font-bold my-8">
+            <h1 className="text-my_teal text-4xl font-bold my-8">
                 Organizations
             </h1>
             <p className="text-lg">
