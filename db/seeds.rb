@@ -190,6 +190,8 @@ ladies = Word.create(word: 'ladies')
 freshman = Word.create(word: 'freshman')
 manmade = Word.create(word: 'manmade')
 upperclassman = Word.create(word: 'upperclassman')
+maternity_leave = Word.create(word: 'maternity leave')
+paternity_leave = Word.create(word: 'paternity leave')
 # words to look up: mister, misses, ma'am, sir
 puts 'done seeding words 💬'
 
@@ -287,6 +289,7 @@ synthetic = Gendernym.create(gendernym: 'synthetic', description: '')
 artificial = Gendernym.create(gendernym: 'artificial', description: '')
 upper_level_student = Gendernym.create(gendernym: 'upper-level student', description: '')
 word = Gendernym.create(gendernym: 'word', description: '')
+parental_leave = Gendernym.create(gendernym: 'parental leave', description: 'gender neutral for parent')
 puts 'done seeding gendernyms 🧍'
 
 puts 'seeding alternatives: words + gendernyms'
@@ -493,6 +496,8 @@ Alternative.create(gendernym_id: upper_level_student.id, word_id: upperclassman.
 Alternative.create(gendernym_id: machine_made.id, word_id: manmade.id)
 Alternative.create(gendernym_id: synthetic.id, word_id: manmade.id)
 Alternative.create(gendernym_id: artificial.id, word_id: manmade.id)
+Alternative.create(gendernym_id: parental_leave.id, word_id: maternity_leave.id)
+Alternative.create(gendernym_id: parental_leave.id, word_id: paternity_leave.id)
 puts 'seeding alternatives: words + gendernyms'
 
 puts 'done seeding data ✅'

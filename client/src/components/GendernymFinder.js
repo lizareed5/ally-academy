@@ -15,6 +15,8 @@ export default function GendernymFinder() {
         .then(data => setWords(data))
     },[])
 
+    // pull the custom route?? then pass down?
+
     const handleSearchInput = (e) => {
         setSearchText(e.target.value)
     }
