@@ -8,6 +8,7 @@ export default function Home() {
         <div>
             <Nav />
             <h1 className="text-my_teal text-3xl font-bold my-8" >Welcome to Ally Academy!</h1>
+            <h2 className="text-my_pink">Work on your allyship with our resources and education</h2>
         </div>
     )
 }
