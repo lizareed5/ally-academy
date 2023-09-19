@@ -19,17 +19,27 @@ export default function Login() {
         navigate('/signup')
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData)
+    }
+
+    // input helper function
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+
     return (
         <div>
             <Nav />
             <h1 className="text-my_teal text-4xl font-bold my-8">
                 Login
             </h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>email</label>
-                <input id="username" type="text" placeholder="email"/>
+                <input id="email" name="email" type="text" placeholder="email" onChange={handleChange}/>
                 <label>password</label>
-                <input id="password" type="password" placeholder="password"/>
+                <input id="password" name="password" type="password" placeholder="password" onChange={handleChange}/>
                 <button>login</button>
                 <p>don't have an account?</p>
                 <button onClick={handleSignupBtnClick}>sign up</button>

@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :words
   resources :organizations
   resources :users
-  # route to test your configuration
+
+  # route to test your configuration & sessions/cookies
   get '/hello', to: 'application#hello_world'
+  get '/sessions', to: 'sessions#index'
 
   get '/words/:id/gendernyms', to: 'words#gendernyms'
 
