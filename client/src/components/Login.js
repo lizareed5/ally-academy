@@ -30,7 +30,7 @@ export default function Login( {updateUser }) {
             if(res.ok) {
                 res.json().then(user => {
                     updateUser(user)
-                    navigate('/home')
+                    navigate('/')
                 })
             } else {
                 res.json().then(json => setErrors(json.errors))
@@ -59,6 +59,7 @@ export default function Login( {updateUser }) {
                 <p>don't have an account?</p>
                 <button onClick={handleSignupBtnClick}>sign up</button>
             </form>
+            {errors ? <h3>{errors}</h3> : null}
         </div>
     )
 }

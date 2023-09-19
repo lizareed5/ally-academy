@@ -20,7 +20,7 @@ function App() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    fetch("/me").then((res) => {
+    fetch('/me').then((res) => {
       if (res.ok) {
         res.json().then((user) => setUser(user));
       } else {
@@ -65,7 +65,7 @@ function App() {
       />
       <Route
         path="/profile"
-        element={<UserProfile/>}
+        element={<UserProfile updateUser={updateUser} user={user}/>}
       />
       <Route
         path="/profile/favorite_organizations"

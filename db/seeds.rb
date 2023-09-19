@@ -14,18 +14,16 @@ puts 'seeding fresh data 🌱'
 
 puts 'seeding liza user'
 liza = User.create(
-    :first_name: "Liza",
-    :last_name: "M",
-    :pronouns: "she/her/hers",
-    :age: 30,
-    :email: 'liza@liza.com',
-    :"LGTBQ+": true,
-    :bio: 'bio here',
-    :password: 'password',
-    :user_image: Faker::Avatar.image
+    first_name: "Liza",
+    last_name: "M",
+    pronouns: "she/her/hers",
+    age: 30,
+    email: 'liza@liza.com',
+    LGTBQplus: true,
+    bio: 'bio here',
+    password: 'password',
+    user_image: Faker::Avatar.image
 )
-
-
 
 puts 'seeding organizations 🏳️‍🌈'
 Organization.create(
