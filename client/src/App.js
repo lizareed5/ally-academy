@@ -17,6 +17,20 @@ import Terms from "./components/Terms";
 import UserProfile from "./components/UserProfile";
 
 function App() {
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    fetch("/me").then((res) => {
+      if (res.ok) {
+        res.json().then((user) => setUser(user));
+      } else {
+        setUser(null)
+      }
+    });
+  }, []);
+
+  const updateUser = (user) => setUser(user)
+  console.log(user)
 
   return (
     <div className="App">
@@ -27,7 +41,7 @@ function App() {
       />
       <Route
         path="/login"
-        element={<Login/>}
+        element={<Login updateUser={updateUser}/>}
       />
       <Route
         path="/signup"

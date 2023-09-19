@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/hello', to: 'application#hello_world'
   get '/sessions', to: 'sessions#index'
 
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get "/me", to: "users#show"
+
   get '/words/:id/gendernyms', to: 'words#gendernyms'
 
 end

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Nav from "./Nav";
 
-export default function Login() {
+export default function Login( {updateUser }) {
     const navigate = useNavigate()
 
     // state for login form
@@ -21,6 +21,21 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        fetch('/login', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(formData)
+        })
+        .then(res => {
+            if(res.ok) {
+                res.json().then(user => {
+                    updateUser(user)
+                    navigate('/home')
+                })
+            } else {
+                res.json().then(json => setErrors(json.errors))
+            }
+        })
         console.log(formData)
     }
 
